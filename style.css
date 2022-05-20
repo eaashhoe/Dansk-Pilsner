@@ -1,16 +1,86 @@
+ *{
+     margin: 0;
+     padding: 0;
+ }
+                                                                                    /* Font styling */
+
+/* link til downloaded font */
 @font-face{
     src: url(fonts/NewYork\ PERSONAL\ USE.otf);
     font-family: NewYork;
 }
-h2{
-    color: rgb(0, 0, 0);
+
+h1{
+    color: black;
     font-family: NewYork;
-    font-size: 70pt;
+    font-size: 45pt;
+    font-weight: 500;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+h2{
+    color: black;
+    font-family: NewYork;
+    font-size: 40pt;
     font-weight: 500;
     letter-spacing: 10px;
 }
 
+h3{
+    color: black;
+    font-family: NewYork;
+    font-size: 27pt;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
 
+h4{
+    color: #085a00;
+    font-family: NewYork;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+}
+
+p{
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* generel link styling */
+a {
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 40px;
+    color: black;
+    text-decoration:none;
+}
+
+a:hover{
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+section{
+    background-color: #f9f9ed;
+}
+
+.greenfont{
+    color: #085a00;
+}
+
+.whitefont{
+    color: white;
+}
+                                                                                /* CTA knapper */
 /* Sort/Hvid CTA button */
 .bwbutton {
     background-color: white;
@@ -24,7 +94,8 @@ h2{
     width: 150px;
     font-family: NewYork;
   }
-  
+
+  /* animation og pil */
   .bwbutton span {
     cursor: pointer;
     display: inline-block;
@@ -50,24 +121,458 @@ h2{
     right: 0;
 
   }
+
 /* Orange CTA Button  */
   .orangebutton {
     background-color: #ff9f1c;
+
     border: none;
-    color: white;
     padding: 13px 30px;
+    margin: 4px 2px;
+
     text-align: center;
     font-size: 20px;
     font-family: NewYork;
-    margin: 4px 2px;
+    color: white;
+    
     opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
-    cursor: pointer;
+
     box-shadow: 5px 10px 8px #dddcdb;
   }
-  
+  /* farven bliver stærkere når man hover */
   .orangebutton:hover {
       opacity: 1
+}
+
+                                                                                            /* Header */
+
+/* Logo */
+
+#logo{
+    height: 100px;
+    width: 100px;
+   
+}
+
+/* Desktop Header */
+/* Display flex bruges her, for at placere logo, 
+nav og søg ikoner som jeg ønsker */
+header{
+    background-color: #f9f9ed;
+
+    z-index: 1;
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Her bruges flexbox på nav, da jeg igen ønsker at de bliver centeret og lige fordelt. 
+Derudover har jeg sat et gap på, for at lave mellemrum mellem menuikonerne */
+nav{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:20px;
+}
+
+/* Jeg har valgt at nav links skal have en specifik styling, 
+som andre a tags ikke skal have, 
+derfor er de placeret her og ikke i generel link styling */
+nav a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-style: normal;
+    text-align: center;
+
+    padding: 5px 16px;
+  }
+
+/* Bæredygtighed skal have en speciel font og styling, 
+den skal bruges 1 gang og derfor er et et id */
+  #greenfont{
+      color: #a5cf45;
+      font-weight: 700;
+      letter-spacing: 2px;
+  }
+
+  /* styling af sub nav knapper for at få dem til at ligne a tagget i naven */
+  .subnav .subnavbtn {
+    font-size: 16px;  
+    color: black;
+
+    text-transform: uppercase;
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 2px;
+
+    background-color: inherit;
+    padding: 14px 16px;
+    border: none;
+    outline: none;
+  }
+  
+/* Ændring af bagrunddsfarve når man hover over nav links */
+  nav a:hover, .subnav:hover .subnavbtn {
+    background-color: #dbf4a7;
+  }
+
+/* undermenu punkter har display none, for at man ikke skal kunne se dem hele tiden */
+/* undermenu punkter har også fået position absolute, 
+da jeg ønsker at menupunkterne foldes ud under de øverste menupunkter */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #dbf4a7;
+    width: 100%;
+   
+  }
+
+/* Når man hover over undermenu punkterne, 
+så kommer der en streg under for at vise man kan trykke på den */
+  .subnav-content a:hover {
+    text-decoration: underline;
+    color: black;
+  }
+  
+  .subnav:hover .subnav-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+                                                                                        
+                                                                                          /* burger menu */
+/* burgermenuen skal have width og height fordi det er en svg fil */
+  #mobilemenubutton{
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Menu.index underside */
+#burgermenubody{
+    background-color: #f9f9ed;
+    padding: 40px;
+    
+}
+
+#burgermenuexit{
+    display: flex;
+    justify-content: flex-end;
+}
+/* krydset skal have width og height fordi det er en svg fil */
+
+#burgermenuexit img{
+    width: 40px;
+    height: 40px;
+    
+}
+/* Menuen er nu vertical ved hjælp af flex direction */
+/* Jeg har valgt at sætte et stort gap, da jeg ikke ønsker 
+at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud */
+#burgermenunav{
+    flex-direction: column;
+    gap: 120px;
+}
+
+                                                                                            /* Hero section */
+
+.hero-image{
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    background: url(img/forarsol-hero.png) no-repeat center;
+    background-size: cover;
+}
+
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+}
+
+
+                                                                                        /* Bæredygtig teaser */
+
+
+
+/* 4 ikoner om bæredygtighed */
+
+#fireikoner{
+    background-color: #dbf4a7;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#fireikoner div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+#fireikoner div i{
+    color: #085a00;
+
+}
+
+                                                                                        /* DIY Teaser med 3 kasser */
+
+.diytrekasser{
+    text-align: center;
+    padding-bottom: 50px;
+}
+#diyteaser{
+    flex-direction: column;
+    padding: 10% 20%;
+}
+
+.diytrekasser div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+
+#flaskedekor{
+    background: 
+    /* transparent sort, lavet med en faked gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* billede */
+    url(img/flaskedekor.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    height: 300px;
+}
+
+#blomsterdekor{
+    background: 
+    /* transparent sort, lavet med en faked gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* billede */
+    url(img/blomsterdekor.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    height: 300px;
+}
+
+#lysdekor{
+    background: 
+   /* transparent sort, lavet med en faked gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* billede */
+    url(img/lysdekor.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    height: 300px;
+}
+
+/* Konkurrence teaser */
+
+.konkurrenceteaser{
+    display: flex;
+    background-color: #ffbf69;
+}
+
+.konkurrenceteasertekst .konkurrencebillede{
+    align-items:center;
+    text-align: center;
+}
+
+.konkurrencebillede img{
+    width: 100%;
+}
+
+.konkurrenceteasertekst div{
+    padding: 10%;
+}
+
+                                                                                                   /* Footer */
+
+/* Flexbox bruges for at fordele footer sektionerne lige */
+footer{
+    background-color: #f9f9ed;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10%;
+}
+
+/* De 3 SoMe ikoner bliver grønne, dette er ikke en 
+generel regel, da andre ikoner skal være sorte */
+footer i{
+   color: #085a00;
+    padding-right: 20px;
+}
+
+                                                                                      /* @media max-width 1100px */
+
+@media only screen and (max-width:1100px){
+    /* header */
+    /* lidt styling for at gøre fonten mindre, og gøre headere responsiv */
+    nav{
+        gap:0;
     }
+    nav a{
+        font-size: 11px;
+    }
+    .subnav .subnavbtn{
+        font-size: 11px;
+    }
+
+    #logo {
+        height: 100px;
+        width: 77px;
+    }
+
+    .hero-image{
+        height: 530px;
+    }
+
+    .hero-image h1{
+        font-size: 30pt;
+    }
+
+    .konkurrenceteasertekst .konkurrencebillede{
+        width: 50%;
+    }
+}
+    
+
+                                                                                     /* @media min-width 768px */
+
+@media only screen and (min-width:768px){
+    /* header */
+    /* burgermenu skal ikke vises  */
+   #mobilemenubutton{
+    display: none;
+}
+    
+    
+}
+                                                                                     /* @media max-width 768px */
+
+@media only screen and (max-width:768px){   
+    /* header */
+    header{
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+
+   nav{
+    display: none;
+    }
+
+    /* Menu.index underside */
+    #burgermenunav{
+        display: flex;
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    /* navigationsmenuen bliver nu column i stedet for row og centeres */
+    .subnav:hover .subnav-content{
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+    }
+
+    /* fonten bliver større for at kunne se menupunkterne mere */
+    nav a {
+        font-size: 17px;
+    }
+    .subnav .subnavbtn{
+        font-size: 17px;
+    }
+
+    .hero-image{
+        height: 430px;
+    }
+    .hero-image h1 {
+        font-size: 20pt;
+    }
+
+    #fireikoner{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    /* footer */
+    /* footer bliver nu column i stedet for row og centeres */
+    footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer section{
+        padding-bottom: 30px;
+    }
+
+    footer i{
+            padding-right: 7px;
+            padding-left: 7px;
+     }
+
+}
+
+                                                    /* @media max-width 580px */
+
+@media only screen and (max-width:580px){   
+    .hero-image{
+        height: 330px;
+    }
+    .hero-image h1 {
+        font-size: 18pt;
+    }
+}
+
+                                                        /* @media min-width 425px */
+
+  @media only screen and (max-width:425px){   
+    .hero-image{
+        height: 230px;
+    }
+    .hero-image h1 {
+        font-size: 10pt;
+    }
+}
+
