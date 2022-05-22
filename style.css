@@ -11,7 +11,7 @@
 }
 
 h1{
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: NewYork;
     font-size: 45pt;
     font-weight: 500;
@@ -22,7 +22,7 @@ h1{
 h2{
     color: black;
     font-family: NewYork;
-    font-size: 40pt;
+    font-size: 30pt;
     font-weight: 500;
     letter-spacing: 10px;
 }
@@ -48,8 +48,9 @@ p{
     font-family: gill-sans-nova, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
+    line-height: 30px;
 }
 
 /* generel link styling */
@@ -80,10 +81,14 @@ section{
 .whitefont{
     color: white;
 }
+
+.morefontweight{
+    font-weight: 600;
+}
                                                                                 /* CTA knapper */
 /* Sort/Hvid CTA button */
-.bwbutton {
-    background-color: white;
+.blackbutton {
+    background-color: transparent;
     border: none;
     border-bottom: 1px black solid;
     border-left: 1px black solid;
@@ -96,14 +101,14 @@ section{
   }
 
   /* animation og pil */
-  .bwbutton span {
+  .blackbutton span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-  .bwbutton span:after {
+  .blackbutton span:after {
     content: '\2192';
     position: absolute;
     opacity: 0;
@@ -112,16 +117,55 @@ section{
     transition: 0.5s;
   }
   
-  .bwbutton:hover span {
+  .blackbutton:hover span {
     padding-right: 25px;
   }
   
-  .bwbutton:hover span:after {
+  .blackbutton:hover span:after {
     opacity: 1;
     right: 0;
 
   }
+  
+  .whitebutton {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px white solid;
+    border-left: 1px white solid;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    font-family: NewYork;
+  }
 
+  /* animation og pil */
+  .whitebutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .whitebutton span:after {
+    content: '\2192';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .whitebutton:hover span {
+    padding-right: 25px;
+  }
+  
+  .whitebutton:hover span:after {
+    opacity: 1;
+    right: 0;
+
+  }
 /* Orange CTA Button  */
   .orangebutton {
     background-color: #ff9f1c;
@@ -289,7 +333,7 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
     gap: 120px;
 }
 
-                                                                                            /* Hero section */
+                                                                                            /* Hero section forside */
 
 .hero-image{
     position: relative;
@@ -309,9 +353,31 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
 }
 
 
+
+
                                                                                         /* Bæredygtig teaser */
 
+.forsideteaser{
+    padding: 10%;
+    position: relative;
 
+}
+.forsideteasertekst{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, -50%);
+    background-color: white;
+    padding: 5%;
+    text-align: center;
+}
+.forsideteasertekst h2{
+    padding-bottom: 30px;
+}
+
+.forsideteasertekst > p {
+    padding-bottom: 20px;
+}
 
 /* 4 ikoner om bæredygtighed */
 
@@ -341,11 +407,11 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
 
 .diytrekasser{
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
 #diyteaser{
     flex-direction: column;
-    padding: 10% 20%;
+    padding: 6% 20%;
 }
 
 .diytrekasser div{
@@ -354,8 +420,18 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
     align-items: center;
     gap: 50px;
 
+    /* Animateret kasse: */
+    padding:2px;
+    margin:0px;
+    letter-spacing:1px;
+    transition: padding 0.5s, margin 0.5s;
 }
 
+
+.diytrekasser div:hover{
+    padding:10px;
+
+}
 
 #flaskedekor{
     background: 
@@ -365,7 +441,7 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
       rgba(0, 0, 0, 0.45)
     ),
     /* billede */
-    url(img/flaskedekor.jpg);
+    url(img/bottledekor.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -404,26 +480,128 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
     width: 20%;
     height: 300px;
 }
-
-/* Konkurrence teaser */
-
-.konkurrenceteaser{
-    display: flex;
-    background-color: #ffbf69;
+#flaskedekor a:hover, #blomsterdekor a:hover, #lysdekor a:hover{
+    text-decoration: none;
+    
 }
 
-.konkurrenceteasertekst .konkurrencebillede{
+
+
+
+                                                                                            /* Konkurrence teaser */
+
+.konkurrenceteaser, #konkurrencebillede, #konkurrenceteasertekst {
+    background-color: #ff9f1c;
+    display:flex;
+}
+
+ #konkurrenceteasertekst{
     align-items:center;
     text-align: center;
 }
 
-.konkurrencebillede img{
+#konkurrencebillede img{
     width: 100%;
 }
 
-.konkurrenceteasertekst div{
+#konkurrenceteasertekst > div{
     padding: 10%;
 }
+
+#konkurrenceteasertekst > div > h3{
+    padding-bottom: 40px;
+    color: white;
+}
+#konkurrenceteasertekst > div > p{
+    padding-bottom: 40px;
+    color: white;
+}
+
+
+
+                                                                                                /* DIY underside */
+/* Hero DIY */
+.hero-image-diy{
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    background: 
+    /* transparent sort, lavet med en faked gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* billede */
+    url(img/diy-hero.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.hero-text-diy{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* indlæs flere */
+
+#indlaesflere{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#indlaesflere h3{
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+                                                                                            /* Konkurrence underside */
+
+/* Hero konkurrence */
+.hero-image-konkurrence{
+    position: relative;
+    height: 800px;
+    overflow: hidden;
+    background: 
+    /* transparent sort, lavet med en faked gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* billede */
+    url(img/konkurrence-hero.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.hero-text-konkurrence{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+}
+
+#konkurrencetekst{
+    text-align: center;
+    padding: 7% 10%;
+}
+
+#konkurrence-desktop-img, #konkurrence-mobil-img{
+    width: 100%;
+}
+
 
                                                                                                    /* Footer */
 
@@ -470,8 +648,10 @@ footer i{
         font-size: 30pt;
     }
 
-    .konkurrenceteasertekst .konkurrencebillede{
-        width: 50%;
+    /* 3 DIY kasser */
+    #flaskedekor, #blomsterdekor, #lysdekor{
+        width: 25%;
+        height: 250px;
     }
 }
     
@@ -484,7 +664,20 @@ footer i{
    #mobilemenubutton{
     display: none;
 }
-    
+
+/* konkurrence teaser */
+
+.konkurrenceteaser{
+    flex-direction:row;
+}
+#konkurrencebillede, #konkurrenceteasertekst{
+    width:50%;
+}
+
+/* Konkurrence underside */
+    #konkurrence-mobil-img{
+        display: none;
+    }    
     
 }
                                                                                      /* @media max-width 768px */
@@ -523,6 +716,7 @@ footer i{
         font-size: 17px;
     }
 
+    /* Hero forside */
     .hero-image{
         height: 430px;
     }
@@ -530,9 +724,74 @@ footer i{
         font-size: 20pt;
     }
 
+    /* fire ikoner */
     #fireikoner{
         flex-direction: column;
         gap: 50px;
+    }
+
+    /* Bæredygtig teaser */
+    .forsideteaser {
+        padding: 10%;
+        display: flex;
+        flex-direction: column-reverse;
+        position: static;
+    }
+
+    .forsideteaser div {
+            display: flex;
+            justify-content: center;
+    }
+
+    .forsideteaser div img {
+        width: 85%;
+    }
+
+    .forsideteasertekst {
+        padding: 5%;
+        text-align: center;
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
+        background-color: transparent;
+    }
+
+    /* 3 DIY kasser */
+    .diytrekasser div {
+        flex-direction: column;
+    }
+    #diyteaser{
+        padding: 5% 12%;
+    }
+    #flaskedekor, #blomsterdekor, #lysdekor {
+        width: 40%;
+        height: 275px;
+    }
+
+    /* Konkurrence teaser */
+    .konkurrenceteaser{
+        flex-direction:column;
+    }
+
+    /* Hero DIY underside */
+    .hero-image-diy{
+        height: 430px;
+    }
+    .hero-image-diy h1 {
+        font-size: 20pt;
+    }
+
+    /* konkurrence underside */
+    .hero-image-konkurrence{
+        height: 430px;
+    }
+    .hero-image-konkurrence h1 {
+        font-size: 20pt;
+    }
+
+    #konkurrence-desktop-img {
+        display: none;
     }
 
     /* footer */
@@ -557,21 +816,60 @@ footer i{
                                                     /* @media max-width 580px */
 
 @media only screen and (max-width:580px){   
+    /* Hero forside */
     .hero-image{
         height: 330px;
     }
     .hero-image h1 {
         font-size: 18pt;
     }
+
+    /* 3 DIY kasser */
+    #flaskedekor, #blomsterdekor, #lysdekor {
+        width: 50%;
+        height: 275px;
+    }
+
+    /* Hero DIY underside */
+    .hero-image-diy{
+        height: 330px;
+    }
+    .hero-image-diy h1 {
+        font-size: 18pt;
+    }
+
+     /* Hero konkurrence underside */
+     .hero-image-konkurrence{
+        height: 330px;
+    }
+    .hero-image-konkurrence h1 {
+        font-size: 18pt;
+    }
 }
 
                                                         /* @media min-width 425px */
 
-  @media only screen and (max-width:425px){   
+  @media only screen and (max-width:425px){ 
+    /* Hero forside */
     .hero-image{
         height: 230px;
     }
     .hero-image h1 {
+        font-size: 10pt;
+    }
+
+    /* Hero DIY underside */
+    .hero-image-diy{
+        height: 230px;
+    }
+    .hero-image-diy h1 {
+        font-size: 10pt;
+    }
+    /* Hero konkurrence underside */
+    .hero-image-konkurrence{
+        height: 230px;
+    }
+    .hero-image-konkurrence h1 {
         font-size: 10pt;
     }
 }
