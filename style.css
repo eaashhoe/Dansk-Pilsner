@@ -337,24 +337,23 @@ at undermenupunkterne dækker over de resterende menupunkter, når de foldes ud 
 .forsideteaser{
     padding: 10%;
     position: relative;
-
 }
+
 .forsideteasertekst{
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-33%, -50%);
-    background-color: white;
     padding: 5%;
+    
     text-align: center;
 }
-.forsideteasertekst h2{
+
+.forsideteasertekst h2, .forsideteasertekst p{
     padding-bottom: 20px;
 }
 
-.forsideteasertekst > p {
-    padding-bottom: 20px;
-}
 
 /* 4 ikoner om bæredygtighed */
 
@@ -768,30 +767,27 @@ footer i{
 
     /* Bæredygtig teaser */
     .forsideteaser {
-        padding: 10%;
         display: flex;
         flex-direction: column-reverse;
-        position: static;
-    }
-
-    .forsideteaser div {
-            display: flex;
-            justify-content: center;
-    }
-
-    .forsideteaser div img {
-        width: 85%;
     }
 
     .forsideteasertekst {
-        padding: 5%;
-        text-align: center;
+        flex-direction: column;
         position: static;
-        top: 0;
-        left: 0;
         transform: none;
         background-color: transparent;
     }
+
+    .forsideteaser div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .forsideteaser div img {
+        width: 100%;
+    }
+
+    
 
     /* 3 DIY kasser */
     .diytrekasser div {
